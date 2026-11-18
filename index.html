@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta tag sesuai tema -->
+  <meta name="description" content="SoFarPixel — jasa desain web untuk landing page, portofolio, redesign, dan UI/UX. Website responsif, cepat, dan berkarakter. Konsultasi gratis via WhatsApp." />
+  <title>SoFarPixel — Jasa Desain Web | Wujudkan Website Impianmu</title>
+
+  <!-- Favicon & ikon dari logo.png (path relatif, huruf kecil) -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Meta Open Graph (tampil rapi saat link dibagikan) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SoFarPixel — Jasa Desain Web" />
+  <meta property="og:description" content="Wujudkan website impianmu: landing page, portofolio, redesign, dan UI/UX. Konsultasi gratis via WhatsApp." />
+  <meta property="og:image" content="logo.png" />
+
+  <!-- Font dari Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS murni, path relatif -->
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    // Set tema awal dari localStorage SEBELUM render agar tidak "flash" saat buka halaman
+    (function () {
+      try {
+        var saved = localStorage.getItem("rp-theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (e) { /* localStorage bisa diblokir, abaikan */ }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Seluruh halaman dirender React ke dalam #root -->
+  <div id="root"></div>
+
+  <!-- React 18 UMD production + htm dari CDN (tanpa Babel / build tool) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/htm@3.1.1/dist/htm.umd.js"></script>
+
+  <!-- Semua komponen React ada di sini -->
+  <script src="script.js"></script>
+</body>
+</html>
